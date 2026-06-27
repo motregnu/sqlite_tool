@@ -1,0 +1,133 @@
+object frmBuildSql: TfrmBuildSql
+  Left = 287
+  Height = 340
+  Top = 76
+  Width = 855
+  BorderStyle = bsDialog
+  Caption = 'Build Sql'
+  ClientHeight = 340
+  ClientWidth = 855
+  DesignTimePPI = 134
+  LCLVersion = '4.2.0.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object lbTables: TListBox
+    Left = 24
+    Height = 206
+    Top = 32
+    Width = 254
+    ItemHeight = 0
+    TabOrder = 0
+    TopIndex = -1
+    OnClick = lbTablesClick
+  end
+  object cbFields: TCheckListBox
+    Left = 344
+    Height = 208
+    Top = 32
+    Width = 240
+    ItemHeight = 0
+    TabOrder = 1
+    TopIndex = -1
+  end
+  object ButtonAddFields: TButton
+    Left = 392
+    Height = 32
+    Top = 248
+    Width = 110
+    Caption = '&Add Fields'
+    TabOrder = 2
+    OnClick = ButtonAddFieldsClick
+  end
+  object lbJoins: TListBox
+    Left = 624
+    Height = 127
+    Top = 34
+    Width = 217
+    ItemHeight = 0
+    TabOrder = 3
+    TopIndex = -1
+  end
+  object ButtonAddJoin: TButton
+    Left = 640
+    Height = 32
+    Top = 178
+    Width = 120
+    Caption = 'Add &Join'
+    TabOrder = 4
+    OnClick = ButtonAddJoinClick
+  end
+  object rbInsert: TRadioGroup
+    Left = 624
+    Height = 98
+    Top = 228
+    Width = 167
+    AutoFill = True
+    AutoSize = True
+    Caption = 'Inset Location'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 66
+    ClientWidth = 165
+    Font.Height = -22
+    Font.Name = 'Sans'
+    ItemIndex = 0
+    Items.Strings = (
+      '&Direct Insert'
+      'A&ppend'
+    )
+    ParentFont = False
+    TabOrder = 5
+  end
+  object rgMisc: TRadioGroup
+    Left = 24
+    Height = 40
+    Top = 286
+    Width = 352
+    AutoFill = True
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 4
+    ClientHeight = 38
+    ClientWidth = 350
+    Columns = 4
+    Items.Strings = (
+      '&Table'
+      '&Select'
+      '&From'
+      '&Where'
+    )
+    TabOrder = 6
+    OnSelectionChanged = rgMiscSelectionChanged
+  end
+  object Label1: TLabel
+    Left = 72
+    Height = 22
+    Top = 0
+    Width = 54
+    Caption = 'Tables'
+  end
+  object Label2: TLabel
+    Left = 380
+    Height = 22
+    Top = 8
+    Width = 49
+    Caption = 'Fields'
+  end
+  object Label3: TLabel
+    Left = 664
+    Height = 22
+    Top = 8
+    Width = 58
+    Caption = 'Join to'
+  end
+end

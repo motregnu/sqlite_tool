@@ -1,0 +1,114 @@
+object frmNewTable: TfrmNewTable
+  Left = 579
+  Height = 650
+  Top = 182
+  Width = 804
+  Caption = 'Create Table'
+  ClientHeight = 650
+  ClientWidth = 804
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 750
+  DesignTimePPI = 134
+  Position = poDesktopCenter
+  LCLVersion = '4.2.0.0'
+  OnCreate = FormCreate
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 433
+    Top = 64
+    Width = 804
+    Align = alBottom
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ColCount = 6
+    DefaultColWidth = 130
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goAlwaysShowEditor, goSmoothScroll]
+    TabOrder = 0
+    TitleStyle = tsNative
+    OnSelectEditor = StringGrid1SelectEditor
+    OnValidateEntry = StringGrid1ValidateEntry
+  end
+  object cmdPickFile: TButton
+    Left = 24
+    Height = 36
+    Top = 9
+    Width = 136
+    Caption = 'Pick.csv File'
+    TabOrder = 1
+    OnClick = cmdPickFileClick
+  end
+  object cmdShowSQL: TButton
+    Left = 171
+    Height = 36
+    Top = 8
+    Width = 105
+    Caption = 'ShowSQL'
+    TabOrder = 2
+    OnClick = cmdShowSQLClick
+  end
+  object cmdCreatTable: TButton
+    Left = 288
+    Height = 36
+    Top = 8
+    Width = 105
+    Caption = 'Creat Table'
+    TabOrder = 3
+    OnClick = cmdCreatTableClick
+  end
+  object Splitter1: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 27
+    Top = 497
+    Width = 804
+    Align = alBottom
+    ResizeAnchor = akBottom
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 126
+    Top = 524
+    Width = 804
+    Align = alBottom
+    ScrollBars = ssAutoBoth
+    TabOrder = 5
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 640
+    Height = 35
+    Hint = 'Add row'
+    Top = 8
+    Width = 32
+    Caption = '+'
+    Font.Height = -22
+    ShowHint = True
+    ParentFont = False
+    ParentShowHint = False
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 704
+    Height = 35
+    Hint = 'Remove row'
+    Top = 8
+    Width = 32
+    Caption = '-'
+    Font.Height = -22
+    ShowHint = True
+    ParentFont = False
+    ParentShowHint = False
+    OnClick = SpeedButton2Click
+  end
+  object edNewTblName: TEdit
+    Left = 400
+    Height = 32
+    Top = 8
+    Width = 232
+    TabOrder = 6
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'CSV Files|*.csv|All Files|*.*'
+    Left = 322
+    Top = 297
+  end
+end

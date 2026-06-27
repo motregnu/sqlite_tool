@@ -1,0 +1,56 @@
+object dmMain: TdmMain
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 209
+  HorizontalOffset = 1486
+  VerticalOffset = 420
+  Width = 384
+  PPI = 134
+  object Conn: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    AfterConnect = ConnAfterConnect
+    KeepConnection = False
+    Transaction = Trans
+    AlwaysUseBigint = False
+    Left = 104
+    Top = 11
+  end
+  object Qry: TSQLQuery
+    FieldDefs = <>
+    Database = Conn
+    Transaction = Trans
+    Params = <>
+    Macros = <>
+    Left = 40
+    Top = 136
+  end
+  object Trans: TSQLTransaction
+    Active = False
+    Database = Conn
+    Left = 152
+  end
+  object DataSource1: TDataSource
+    DataSet = Qry
+    Left = 104
+    Top = 88
+  end
+  object qryTables: TSQLQuery
+    FieldDefs = <>
+    Database = Conn
+    Transaction = Trans
+    SQL.Strings = (
+      ' SELECT cast(name as varchar(50)) as name,'
+      ' cast(type as varchar(50)) as type, sql'
+      ' FROM sqlite_master'
+      ' WHERE type = ''view'' or type = ''table'''
+      ' order by type, name'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 40
+    Top = 88
+  end
+end

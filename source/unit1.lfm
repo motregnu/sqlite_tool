@@ -1,0 +1,27 @@
+object Form1: TForm1
+  Left = 912
+  Height = 240
+  Top = 221
+  Width = 553
+  Caption = 'Form1'
+  ClientHeight = 240
+  ClientWidth = 553
+  DesignTimePPI = 134
+  LCLVersion = '4.2.0.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 30
+    Top = 210
+    Width = 553
+    Panels = <>
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 70
+    Top = 0
+    Width = 553
+    Align = alTop
+    Caption = 'Panel1'
+    TabOrder = 1
+  end
+end
