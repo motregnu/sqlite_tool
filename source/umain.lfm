@@ -292,6 +292,7 @@ object Fmain: TFmain
       item
         Command = ecPaste
         ShortCut = 8237
+        ShortCut2 = 16470
       end    
       item
         Command = ecDeleteChar
@@ -587,7 +588,7 @@ object Fmain: TFmain
     Lines.Strings = (
       ''
     )
-    Options = [eoAutoIndent, eoBracketHighlight, eoGroupUndo, eoKeepCaretX, eoScrollPastEol, eoSmartTabs, eoTabsToSpaces, eoTrimTrailingSpaces]
+    Options = [eoAutoIndent, eoBracketHighlight, eoGroupUndo, eoKeepCaretX, eoPersistentCaret, eoScrollPastEol, eoSmartTabs, eoTabsToSpaces, eoTrimTrailingSpaces]
     VisibleSpecialChars = [vscSpace, vscTabAtLast]
     SelectedColor.BackPriority = 50
     SelectedColor.ForePriority = 50
@@ -858,7 +859,7 @@ object Fmain: TFmain
     Top = 176
   end
   object SynCompFields: TSynCompletion
-    Position = 0
+    Position = -1
     LinesInWindow = 10
     SelectedColor = clSkyBlue
     CaseSensitive = False

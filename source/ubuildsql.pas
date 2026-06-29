@@ -16,6 +16,7 @@ type
     ButtonAddJoin: TButton;
     ButtonAddFields: TButton;
     cbFields: TCheckListBox;
+    cbLeftJoin: TCheckBox;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -124,6 +125,9 @@ begin
         [AJoinedTable,Jtbl,JoinedField,
          Btbl,BaseField ]);
 
+  if cbLeftJoin.Checked then
+   Result := 'Left ' + Result;
+
   T.Free;
 end;
 
@@ -155,7 +159,7 @@ begin
   case rgMisc.ItemIndex of
    0: s := getTableName;
    1: s := 'Select ';
-   2: s := 'From '  ;
+   2: s := 'From ' + getTableName ;
    3: s := 'Where ';
    end;
     AddText(s);
@@ -251,6 +255,7 @@ begin
    sTbl := lbJoins.Items[i];
 
   s := GetJoinString(MainTB,sTbl,lbJoins.ItemIndex);
+
 
   rbInsert.ItemIndex:= 1;
   AddText(s);

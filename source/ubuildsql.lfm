@@ -33,9 +33,12 @@ object frmBuildSql: TfrmBuildSql
   object ButtonAddFields: TButton
     Left = 392
     Height = 32
+    Hint = 'Add selected fields to SQL Editor'
     Top = 248
     Width = 110
     Caption = '&Add Fields'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 2
     OnClick = ButtonAddFieldsClick
   end
@@ -49,10 +52,10 @@ object frmBuildSql: TfrmBuildSql
     TopIndex = -1
   end
   object ButtonAddJoin: TButton
-    Left = 640
+    Left = 624
     Height = 32
-    Top = 178
-    Width = 120
+    Top = 176
+    Width = 98
     Caption = 'Add &Join'
     TabOrder = 4
     OnClick = ButtonAddJoinClick
@@ -129,5 +132,13 @@ object frmBuildSql: TfrmBuildSql
     Top = 8
     Width = 58
     Caption = 'Join to'
+  end
+  object cbLeftJoin: TCheckBox
+    Left = 724
+    Height = 24
+    Top = 176
+    Width = 98
+    Caption = 'Lef tJoin'
+    TabOrder = 7
   end
 end

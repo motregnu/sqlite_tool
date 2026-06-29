@@ -113,7 +113,6 @@ type
       SourceValue: string; var SourceStart, SourceEnd: TPoint;
       KeyChar: TUTF8Char; Shift: TShiftState);
 
-  //  procedure SynEdit1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     MRUMenuMgr: TMRUMenuManager;
     QryList : TBoundedStringList;
@@ -152,7 +151,8 @@ implementation
 uses
    uSQLhist, uHistory, unew_table, frmCSVImp,
    IniFiles, UAttached, uReporterpas, LazFileUtils, uDBToPdf,
-   uShortcutCheckDialogEx, ubuildsql;
+   uShortcutCheckDialogEx, ubuildsql, SynEditTypes,
+   SynEditKeyCmds, Clipbrd;
 
 {$R *.lfm}
 
@@ -884,6 +884,8 @@ procedure TFmain.SynCompTablesCodeCompletion(var Value: string;
 begin
   InitSynCompFields(Value);
 end;
+
+
 
 
 
